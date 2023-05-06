@@ -2,7 +2,7 @@
 
 ![the wacy](Logo/thewacy.png?raw=true)
 
-*From left to right, Costanza (DLC), Tito, King Brady, Sir Francis, Pranzo, Pesto, Lin-Manuel, Belial (DLC).*
+*From left to right, Costanza (DLC), Tito, King Brady, St. Francis, Pranzo, Pesto, Lin-Manuel, Belial (DLC).*
 
 ### A game about strife, love and loss
 
@@ -13,6 +13,6 @@
 - 2: Lin-Manuel fistbumps you again if you have already given him the first fist bump {var bumpManuel}
 - 3: Tito remembers if you complained about starting the quest at the end of the game {var complain}
 - 4: New dialogue options open with Pranzo if you've seen the Godfather {var sawGodfather}
-- 5: A certain dialogue path for Pranzo makes you a cop, making Sir Francis shoot you if you lie to him {var isCop}
+- 5: A certain dialogue path for Pranzo makes you a cop, making St. Francis shoot you if you lie to him {var isCop}
 - 6: A certain dialogue path for Pranzo gives you a crown which you can later give to King Brady {vars crown, gaveCrown}
-- 7 - 11: Answering with at least one wacy option per character allows you to select their color as your favorite color in the Sir Francis quiz 
+- 7 - 11: Answering with at least one wacy option per character allows you to select their color as your favorite color in the St. Francis quiz 
