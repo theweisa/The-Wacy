@@ -1,4 +1,10 @@
-The Wacy Callbacks
+# **The Wacy**
+
+![the wacy](Logo/the wacy.png?raw=true)
+###A game about strife, love and loss
+
+
+###Callbacks
 
 - 1: Tito remembers if you did a handstand at the end of the game {var firstHandstand}
 - 2: Lin-Manuel fistbumps you again if you have already given him the first fist bump {var bumpManuel}
