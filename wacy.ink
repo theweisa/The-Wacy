@@ -83,15 +83,21 @@ by Andrew Wei and ttvTonikSC
     * [Continue] -> linManuel
     
 === linManuel ===
-- Lin Manuel: Hello my friend. My name is Lin-Manuel. Bit of a critic of the film variety. Are you familiar with Shark Tale?
+- Lin-Manuel: Hello my friend. My name is Lin-Manuel. Bit of a critic of the film variety. Are you familiar with Shark Tale?
     -> askManuel
 == askManuel ===
     * [What's up with the gun]
-        -- Lin Manuel: I believe in the right to bear arms.
+        -- Lin-Manuel: I believe in the right to bear arms.
             ** [Do you have any education on gun training]
-                --- Lin Manuel: No. 
+                --- Lin-Manuel: No. 
                     *** [ok]
-                        ---- Lin Manuel: Ignore the gun. Have you seen Shark Tale?
+                        ---- Lin Manuel: So have you seen Shark Tale?
+                        -> askManuel
+            ** [hell yeah brother]
+                --- He gives you a fistbump.
+                    ~bumpManuel = true
+                    *** [so uh]
+                        ---- Lin Manuel: So have you seen Shark Tale?
                         -> askManuel
     
     * [{filmBuff >= 4:
@@ -100,12 +106,12 @@ by Andrew Wei and ttvTonikSC
         No I actually haven't
     }]
         {filmBuff >= 4:
-            Lin Manuel: Yeah, tis’ one of my favorite films. I have yet to see any others yet, but I have heard great things about Over the Hedge.
+            Lin-Manuel: Yeah, tis’ one of my favorite films. I have yet to see any others yet, but I have heard great things about Over the Hedge.
                 ** [cool]
                     Lin Manuel: what other films have you seen ->filmTalk
                 
         -else:
-            Lin Manuel: Erm you should check it out pronto my frienderino. Have you seen any films then?? ->filmTalk
+            Lin-Manuel: Erm you should check it out pronto my frienderino. Have you seen any films then?? ->filmTalk
         }
 
     *-> afterManuel
@@ -113,12 +119,12 @@ by Andrew Wei and ttvTonikSC
         = filmTalk
             
             ** [The Godfather is pretty good]
-                --- Lin Manuel: I have no idea what that is.
+                --- Lin-Manuel: I have no idea what that is.
                 {checkStat("Italian", italian, 5)}
                 {checkStat("Film Buff", filmBuff, 2)}
                     *** [continue] -> askManuel
             ** [I’m really into Wes Anderson]
-                --- Lin Manuel: Pretentious prick.
+                --- Lin-Manuel: Pretentious prick.
                 {checkStat("Italian", italian, -3)}
                 {checkStat("Avant Garde", avantGarde, 3)}
                 {checkStat("Film Buff", filmBuff, 2)}
@@ -126,13 +132,13 @@ by Andrew Wei and ttvTonikSC
             ** [I enjoyed Goodfellas quite a bit]
                 {checkStat("Italian", italian, 4)}
                 {checkStat("Film Buff", filmBuff, 1)}
-                --- Lin Manuel: Is that one a sequel or prequel to Shark Tale
+                --- Lin-Manuel: Is that one a sequel or prequel to Shark Tale
                     *** [Don't answer] 
                     ---- Lin Manuel: ...ok
                         **** [continue] -> askManuel
 
 === afterManuel ===
-- Lin Manuel: Well anyways, I should probably tell you a bit about the area ahead. You are now headed to the outskirts of The Wacy. You should be careful out there, my old chap. It’s not actually that dangerous, but the guys out there are weird. 
+- Lin-Manuel: Well anyways, I should probably tell you a bit about the area ahead. You are now headed to the outskirts of The Wacy. You should be careful out there, my old chap. It’s not actually that dangerous, but the guys out there are weird. 
 *[Continue] ->hatTip
 = hatTip
 - Lin-Manuel tips his hat at you
@@ -140,7 +146,7 @@ by Andrew Wei and ttvTonikSC
         -- Lin Manuel: woah. 
         {checkStat("Handstand", handstand, 2)}
         **[Continue] ->act2
-    * [Give him another fist bump]
+    *  {bumpManuel == true} [Give him another fist bump]
         ~bumpManuel = true
         -- Lin Manuel: Cya.
         {checkStat("Avant Garde", avantGarde, -1)}
@@ -164,10 +170,10 @@ by Andrew Wei and ttvTonikSC
 === pranzo ===
 * [{italian < 5:
     sorry what
+        POTRESTI NON SENTIRMI?
 - else:
     VA BENE VA BENE E TU?
 }]
-    POTRESTI NON SENTIRMI?
     {italian < 5:
         ** [no I can't]
             Pranzo: CAPISCO… ->afterPranzo
@@ -297,7 +303,7 @@ by Andrew Wei and ttvTonikSC
                 * [Continue]->b
         }
     * [Yes]
-        -- St. Francis: Disguisting. 
+        -- St. Francis: Disgusting. 
         {checkStat("Wacy", wacy, -2)}
             ** [Continue]->b
 =b
@@ -378,8 +384,9 @@ by Andrew Wei and ttvTonikSC
 =getSeed
 - Pesto: Alright cool glad that's settled. Im gonna go get high and watch youtube video essays so can you kindly get out now please
     * [Leave with the seed] -> ending
-    * {handstand >= 10} [Do a handstand]
-        -- you try to do a handstand. Your arms can't take it anymore and fall off. ->END
+    * {handstand >= 8} [Do a handstand]
+        -- Pesto: yoooooo
+            ** [Continue] -> ending
     
 === ending ===
 - Tito rides up to the tower in his Prius with the other Pyoros.
