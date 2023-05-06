@@ -2,6 +2,8 @@
 
 ![the wacy](Logo/thewacy.png?raw=true)
 
+*From left to right, Costanza (DLC), Tito, King Brady, Sir Francis, Pranzo, Pesto, Lin-Manuel, Belial (DLC).*
+
 ### A game about strife, love and loss
 
 
